@@ -4,7 +4,7 @@ import javax.xml.transform.Result;
 
 public class Decoder implements Action{
     @Override
-    public Result execute(String[] parametrs) {
+    public Result execute(String[] parameters) {
         return null;
     }
 }
