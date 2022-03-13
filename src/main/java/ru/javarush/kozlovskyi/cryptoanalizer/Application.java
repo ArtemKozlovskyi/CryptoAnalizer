@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Application {
 
-    private MainContriller mainContriller;
+    private final MainContriller mainContriller;
 
     public Application() {
         mainContriller = new MainContriller();
@@ -21,7 +21,7 @@ public class Application {
             mainContriller.doAction(action, parameters);
         }
         throw new AppExceptions();
-        
+
     }
 
 }
