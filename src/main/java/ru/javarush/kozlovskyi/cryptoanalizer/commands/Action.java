@@ -1,9 +1,11 @@
 package ru.javarush.kozlovskyi.cryptoanalizer.commands;
 
+import ru.javarush.kozlovskyi.cryptoanalizer.entity.Results;
+
 import javax.xml.transform.Result;
 
 public interface Action {
 
-    Result execute(String[] parameters);
+    Results execute(String[] parameters);
 
 }

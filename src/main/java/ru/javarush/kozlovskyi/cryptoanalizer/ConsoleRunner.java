@@ -1,18 +1,15 @@
 package ru.javarush.kozlovskyi.cryptoanalizer;
 
-import ru.javarush.kozlovskyi.cryptoanalizer.entity.Result;
-
-import java.util.Arrays;
+import ru.javarush.kozlovskyi.cryptoanalizer.entity.Results;
 
 public class ConsoleRunner {
+
     public static void main(String[] args) {
-
-
-
+        // encode text.txt encode.txt 12
         Application application = new Application();
-        Result result  = application.run(args);
-
+        Results result  = application.run(args);
         System.out.println(result);
+
     }
 }
 //        int key = 123; // from argument
