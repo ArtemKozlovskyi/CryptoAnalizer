@@ -3,11 +3,11 @@ package ru.javarush.kozlovskyi.cryptoanalizer.entity;
 public class Results {
 
     public String message;
-    public ResultCode resultCode;
+    public ResultsCode resultCode;
 
-    public Results(String message, ResultCode resultCode) {
+    public Results(String message, ResultsCode resultsCode) {
         this.message = message;
-        this.resultCode = resultCode;
+        this.resultCode = resultsCode;
     }
 
     @Override

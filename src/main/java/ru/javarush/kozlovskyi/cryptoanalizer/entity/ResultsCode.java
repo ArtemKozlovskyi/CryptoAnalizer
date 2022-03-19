@@ -1,6 +1,6 @@
 package ru.javarush.kozlovskyi.cryptoanalizer.entity;
 
-public enum ResultCode {
+public enum ResultsCode {
 
     OK,ERROR;
 
