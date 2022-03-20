@@ -4,6 +4,7 @@ import ru.javarush.kozlovskyi.cryptoanalizer.controllers.MainContriller;
 import ru.javarush.kozlovskyi.cryptoanalizer.entity.Results;
 import ru.javarush.kozlovskyi.cryptoanalizer.exceptions.AppExceptions;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Application {
@@ -15,7 +16,7 @@ public class Application {
         mainContriller = new MainContriller();
     }
 
-    public Results run(String[] args){
+    public Results run(String[] args) throws IOException {
         // encode text.txt encode.txt 12
 
         if (args.length > 0) {

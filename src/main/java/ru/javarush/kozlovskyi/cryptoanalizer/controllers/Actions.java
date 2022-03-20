@@ -20,7 +20,6 @@ public enum Actions {
 
     public static Action find(String actionName){
         try{
-
             Actions value = Actions.valueOf(actionName.toUpperCase());
             Action action = value.action;
             return action;
