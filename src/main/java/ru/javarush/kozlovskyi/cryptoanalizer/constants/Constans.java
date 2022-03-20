@@ -7,7 +7,7 @@ public class Constans {
     public static String rus = "ЙЦУКЕЁНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ";
     public static String eng = "QWERTYUIOPASDFGHJKLZXCVBNM";
     public static String cypher = "0123456789";
-    public static String symbols = "-!() .,\"':;?";
+    public static String symbols = "-!()[]{}*`|\\^&+= .,\"':;?";
     public static String ALPHABET = rus + eng + rus.toLowerCase() + eng.toLowerCase() + cypher + symbols;
     public static char[] alphabet = ALPHABET.toCharArray();
     public static int keyAlphabet = rus.length() + eng.length() + rus.toLowerCase().length()

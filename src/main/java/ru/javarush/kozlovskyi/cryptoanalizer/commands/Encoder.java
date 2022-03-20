@@ -10,17 +10,16 @@ import java.util.Objects;
 import static ru.javarush.kozlovskyi.cryptoanalizer.constants.Constans.*;
 
 
-public class Encoder implements Action{
+public class Encoder implements Action {
 
     @Override
     public Results execute(String[] parameters) throws IOException {
 
-        BufferedReader reader = new BufferedReader( new FileReader(TXT_FOLDER + parameters[0]));
-        CharArrayWriter charArrayWriter =  new CharArrayWriter();
+        BufferedReader reader = new BufferedReader(new FileReader(TXT_FOLDER + parameters[0]));
+        CharArrayWriter charArrayWriter = new CharArrayWriter();
 
             char[] array = new char[1];
-            while(reader.read(array)!=-1)
-            {
+            while (reader.read(array) != -1) {
                 charArrayWriter.write(array);
             }
 
@@ -42,17 +41,16 @@ public class Encoder implements Action{
 
         BufferedWriter bufWriter = new BufferedWriter(new FileWriter((TXT_FOLDER + parameters[1])));
 
-            char[] tmp = new char[1];
-            while(charArrayReader.read(tmp)!=-1)
-            {
-                bufWriter.write(tmp);
-            }
+        char[] tmp = new char[1];
+        while (charArrayReader.read(tmp) != -1) {
+            bufWriter.write(tmp);
+        }
 
         charArrayReader.close();
         bufWriter.flush();
         bufWriter.close();
 
-        return new Results( "encode all right", ResultsCode.OK);
+        return new Results("encode all right", ResultsCode.OK);
     }
 
 }
