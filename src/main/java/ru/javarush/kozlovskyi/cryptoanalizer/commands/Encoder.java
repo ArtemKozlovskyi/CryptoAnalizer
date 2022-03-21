@@ -37,6 +37,7 @@ public class Encoder implements Action {
                 }
             }
         }
+
         CharArrayReader charArrayReader = new CharArrayReader(wordAfterCoding);
 
         BufferedWriter bufWriter = new BufferedWriter(new FileWriter((TXT_FOLDER + parameters[1])));

@@ -25,7 +25,7 @@ public class Application {
             String[] parameters = Arrays.copyOfRange(args, 1, args.length);
             return mainContriller.doAction(action, parameters);
         } else {
-            throw new AppExceptions("not argumens ");
+            throw new AppExceptions("not argumens");
         }
 
 
