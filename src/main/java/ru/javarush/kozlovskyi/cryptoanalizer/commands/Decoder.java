@@ -1,5 +1,6 @@
 package ru.javarush.kozlovskyi.cryptoanalizer.commands;
 
+
 import ru.javarush.kozlovskyi.cryptoanalizer.entity.ResultsCode;
 import ru.javarush.kozlovskyi.cryptoanalizer.entity.Results;
 import ru.javarush.kozlovskyi.cryptoanalizer.exceptions.AppExceptions;
@@ -15,6 +16,7 @@ public class Decoder implements Action {
 
     @Override
     public Results execute(String[] parameters) throws AppExceptions {
+
         CharArrayWriter charWordAfterCoding = new CharArrayWriter();
         try (BufferedReader readerForInputPath = new BufferedReader(new FileReader(TXT_FOLDER + parameters[0]))) {
             char[] arrayTempAfter = new char[1];
@@ -24,6 +26,7 @@ public class Decoder implements Action {
         } catch (Exception e) {
             throw new AppExceptions("input filepath was wrong", e);
         }
+        charWordAfterCoding.close();
 
         char[] wordAfterCoding = charWordAfterCoding.toString().toCharArray();
         int key = Integer.parseInt(parameters[2]);
@@ -33,12 +36,15 @@ public class Decoder implements Action {
             for (int k = 0; k < alphabet.length; k++) {
                 if (Objects.equals(wordAfterCoding[j], alphabet[k])) {
                     wordBeforeCoding[j] = alphabet[((k + keyAlphabet) - key) % keyAlphabet];
-                }
-            }
-        }
-        CharArrayReader charWordBeforeCoding = new CharArrayReader(wordBeforeCoding);
 
-        try (BufferedWriter bufWriter = new BufferedWriter(new FileWriter((TXT_FOLDER + parameters[1])))) {
+                }
+
+            }
+
+        }
+
+        try (BufferedWriter bufWriter = new BufferedWriter(new FileWriter((TXT_FOLDER + parameters[1])));
+             CharArrayReader charWordBeforeCoding = new CharArrayReader(wordBeforeCoding)) {
             char[] arrayTempBefore = new char[1];
             while (charWordBeforeCoding.read(arrayTempBefore) != -1) {
                 bufWriter.write(arrayTempBefore);
@@ -46,7 +52,6 @@ public class Decoder implements Action {
         } catch (Exception e) {
             throw new AppExceptions("outnput filepath was wrong", e);
         }
-
 
         return new Results("decode all right", ResultsCode.OK);
     }
